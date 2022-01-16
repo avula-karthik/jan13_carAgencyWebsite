@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(146, 168, 209);
+    font-family: monospace;
+}
+
+h1{
+    
+    /* color: red; */
+    text-align: center;
+}
+table{
+    width: 75%;
+}
+td{
+    border: 3px solid red;
+    text-align: center;
+}
+
+

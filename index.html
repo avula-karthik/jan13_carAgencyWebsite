@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-2">Car Rental Site</h1>
+
+        <form>
+            <div class="form-group">
+                <label>Select Car Model : </label>
+                <select name="carModel" id="carModelID" class="form-select">
+                    <option selected>Choose your model</option>
+                    <option value="Benz">Benz</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Bajaj Alto 800">Bajaj Alto 800</option>
+                    <option value="Nano">Nano</option>
+                    <option value="Kia">Kia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Select Car Color : </label>
+                <input type="color" class="form-select" id="carcolorID" name="carColor">
+            </div>
+
+            <div class="form-group">
+                <label>Rent per day</label>
+                <input type="number" class="form-control" name="rent" id="rentID">
+            </div>
+
+            <div class="form-group">
+                <label>Car ID</label>
+                <input type="number" class="form-control" name="carid" id="caridid">
+            </div>
+        </form>
+
+        <div class="text-center">
+            <button class="btn btn-primary" onclick="addcar()" id="btnid">Add Car</button>
+        </div>
+
+        <div class="text-center mt-3">
+            <button class="btn btn-primary" onclick='window.location.href="mycart.html" ' id="btnid">Add to
+                Cart</button>
+        </div>
+    </div>
+    <script>
+        let allcars = []
+        function addcar() {
+            let car_obj = {
+                model: document.getElementById("carModelID").value,
+                color: document.getElementById("carcolorID").value,
+                rent: document.getElementById("rentID").value,
+                id: document.getElementById("caridid").value
+            }
+            allcars.push(car_obj);
+            let carJSON = JSON.stringify(allcars);
+            localStorage.setItem("Cars", carJSON);
+
+        }
+
+    </script>
+</body>
+
+</html>
